@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div class="logo">
+        <img src="img1.png" alt="YouTube">
+        <span class="country">PK</span>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="search-form">
+        <input type="text" placeholder="Search" class="search-input" id="searchInput">
+        <button class="search-btn" id="searchBtn">🔍</button>
+      </div>
+      <button class="mic-btn">🎤</button>
+    </div>
+        <div class="header-right">
+          <div class="menu-container" style="position: relative;">
+            <button class="icon-btn" id="menuDotsBtn">⋮</button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none; position: fixed; top: 60px; right: 8px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); width: 250px; max-width: calc(100vw - 16px); z-index: 1001; overflow: hidden;">
+              <a href="#" class="dropdown-item" id="appearanceBtn" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; text-decoration: none; color: #0f0f0f; font-size: 14px;">
+                <span>🌙</span> Appearance: Light
+              </a>
+              <a href="#" class="dropdown-item" id="settingsBtn" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; text-decoration: none; color: #0f0f0f; font-size: 14px;">
+                <span>⚙️</span> Settings
+              </a>
+              <div style="height: 1px; background: #e5e5e5; margin: 8px 0;"></div>
+              <a href="#" class="dropdown-item" id="helpBtn" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; text-decoration: none; color: #0f0f0f; font-size: 14px;">
+                <span>❓</span> Help
+              </a>
+            </div>
+          </div>
+          <button class="signin-btn">
+            <span>👤</span>
+            <span class="signin-text">Sign in</span>
+          </button>
+        </div>
+    <div class="mobile-search" id="mobileSearch">
+      <button class="back-btn" id="backBtn">←</button>
+      <input type="text" placeholder="Search" class="search-input-mobile">
+      <button class="search-btn-mobile">🔍</button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-item active" data-filter="all">
+        <span class="icon">🏠</span>
+        <span class="text">Home</span>
+      </a>
+      <a href="#" class="sidebar-item" data-filter="trending">
+        <span class="icon">🔥</span>
+        <span class="text">Trending</span>
+      </a>
+      <a href="#" class="sidebar-item" data-filter="subscriptions">
+        <span class="icon">📺</span>
+        <span class="text">Subscriptions</span>
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <h3 class="section-title">LIBRARY</h3>
+      <a href="#" class="sidebar-item" data-filter="history">
+        <span class="icon">🕒</span>
+        <span class="text">History</span>
+      </a>
+      <a href="#" class="sidebar-item" data-filter="watch-later">
+        <span class="icon">⏰</span>
+        <span class="text">Watch Later</span>
+      </a>
+        <a href="#" class="sidebar-item" data-filter="liked">
+    <span class="icon">👍</span>
+    <span class="text">Liked videos</span>
+  </a>
+      <a href="#" class="sidebar-item" data-filter="playlist1">
+        <span class="icon">📋</span>
+        <span class="text">playlist1</span>
+      </a>
+      <a href="#" class="sidebar-item" data-filter="playlist2">
+        <span class="icon">📋</span>
+        <span class="text">playlist2</span>
+      </a>
+     
+
+<!-- Ye extra items hain jo hide rahenge -->
+<div class="sidebar-extra-items" style="display: none;">
+  <a href="#" class="sidebar-item" data-filter="playlist3">
+    <span class="icon">📋</span>
+    <span class="text">playlist3</span>
+  </a>
+  <a href="#" class="sidebar-item" data-filter="playlist4">
+    <span class="icon">📋</span>
+    <span class="text">playlist4</span>
+  </a>
+
+</div>
+  </a> <!-- ye Liked videos wala close hai line 103 pe -->
+</div> <!-- ye sidebar-extra-items wala close hai -->
+
+<!-- Ye button add karo line 105 se -->
+<a href="#" class="sidebar-item" id="sidebarShowMoreBtn">
+  <span class="icon">⌄</span>
+  <span class="text">Show more</span>
+</a>
+
+    </div>
+   <div class="sidebar-section">
+  <h3 class="section-title">SUBSCRIPTIONS</h3>
+  <a href="#" class="sidebar-item" data-filter="song">
+    <img src="pic1.png.jpg" class="channel-img" alt="">
+    <span class="text">Song</span>
+  </a>
+  <a href="#" class="sidebar-item" data-filter="soundroom">
+    <img src="pic2.png.jpg" class="channel-img" alt="">
+    <span class="text">The Sound Room</span>
+  </a>
+  <a href="#" class="sidebar-item" data-filter="tunetribe">
+    <img src="pic3.png.jpg" class="channel-img" alt="">
+    <span class="text">TuneTribe</span>
+  </a>
+  <a href="#" class="sidebar-item" data-filter="artestic">
+    <img src="pic4.png.jpg" class="channel-img" alt="">
+    <span class="text">Artestic Music</span>
+  </a>
+  <a href="#" class="sidebar-item" data-filter="sonic">
+    <img src="pic5.png.jpg" class="channel-img" alt="">
+    <span class="text">Sonic Stream</span>
+  </a>
+</div>
+  </aside>
+
+  <main class="main-content">
+    <h2 class="content-title" id="contentTitle">Recommended</h2>
+    <div class="video-grid" id="videoGrid"></div>
+  </main>
+
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">✕</button>
+      <video id="videoPlayer" controls></video>
+      <div class="modal-actions">
+        <h3 id="modalTitle"></h3>
+        <button class="download-btn" id="downloadBtn">⬇ Download</button>
+      </div>
+    </div>
+  </div>
+    <!-- Login Modal -->
+  <div class="video-modal" id="loginModal">
+    <div class="modal-content" style="max-width: 400px; background: white; padding: 24px;">
+      <button class="close-modal" id="closeLoginModal" style="color: #0f0f0f; background: #f2f2f2;">✕</button>
+      <h2 style="color: #0f0f0f; margin-bottom: 20px; font-size: 22px;">Sign in</h2>
+      <input type="text" id="loginEmail" placeholder="Email or phone" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+      <input type="password" id="loginPassword" placeholder="Password" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+      <button id="loginSubmitBtn" class="download-btn" style="width: 100%; margin-bottom: 12px;">Sign in</button>
+      <p style="color: #606060; font-size: 12px; text-align: center;">Demo login hai. Real nahi hai.</p>
+    </div>
+  </div>
+</body>
+ <script src="script.js"></script>
+ </html>
